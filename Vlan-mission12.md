@@ -40,32 +40,4 @@ exit
 configure terminal	  	
 vlan[numero du vlan]	  	
 name [nom du vlan]	 	
-exit
-    ````
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+exit ````
