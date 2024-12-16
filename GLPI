@@ -1,0 +1,60 @@
+1 – Mise à jour des paquets Debian
+apt update & apt upgrade -y
+
+2 – Installation, si nécessaire, du serveur LAMP (Linux Apache MariaDB PHP)
+
+a) Installation d’Apache :
+apt install apache2
+
+b) Installation PHP 8.2 (GLPI 10 nécessite une version PHP 8 au minimum) :
+Pour installer PHP 8.2 en tant que module Apache, vous devez procéder ainsi (Debian 12 possède les paquets PHP 8.2 par défaut) :
+apt install php libapache2-mod-php
+sudo systemctl restart apache2
+
+c) Installation de MariaDB :
+apt install mariadb-server
+Une fois l’installation de MariaDB effectuée, lancez l’utilitaire de configuration du mot de passe root en saisissant la commande
+suivante :
+mysql_secure_installation (suivez les étapes pour sécuriser MariaDB en définissant le mot de passe du root
+
+3 – Création de la base de données « GLPI »
+mysql -u root -p
+(saisir le mot de passe du root que vous avez défini lors de l’installation)
+Ensuite nous allons créer une base de données nommée « glpi », créer un utilisateur « glpi », lui donner un mot de passe et lui
+accorder tous les droits de lecture/écriture. Pour cela, nous saisissons les commandes :
+create database glpi; (création de la base de données « glpi »)
+create user 'glpi'@'localhost' identified by 'glpi'; (création de l’utilisateur avec son mot de passe qui sera « glpi »)
+grant all privileges on glpi.* to 'glpi'@'localhost' with grant option; (on augmente les droits de l’utilisateur)
+lush privileges; (on met à jour les modifications apportées)
+quit (ou exit)
+
+4 – Téléchargement et décompression de l’archive « GLPI »
+wget https://github.com/glpi-project/glpi/releases/download/10.0.10/glpi-10.0.10.tgz
+Une fois l’archive téléchargée, il faut la décompresser en saisissant : tar xvf glpi-10.0.10.tgz
+
+On va maintenant déplacer ce dossier décompressé nommé « glpi » dans l’arborescence d’Apache et à l’endroit suivant :
+/var/www/html (c’est à cet endroit que se trouve la page d’accueil par défaut d’Apache ; le fameux « It Works ! »). Ici, nous
+n’avons pas créé de virtualhost pour simplifier le tutoriel. mv glpi /var/www/html/glpi
+
+Avant de lancer l’installation de GLPI, vous devez ajouter les modules PHP suivants qui sont nécessaires à GLPI :
+apt install php8.2-curl php8.2-gd php8.2-mbstring php8.2-zip php8.2-xml php8.2-ldap php8.2-intl php8.2-mysql php8.2-dom php8.2-simplexml php-json php8.2-phpdbg php8.2-cgi
+
+On commence par donner la propriété du dossier GLPI à l’administrateur d’Apache (le « www-data ») et on accorde les droites
+nécessaires :
+chown -R www-data:www-data /var/www/html/glpi/
+chmod -R 755 /var/www/html/glpi/
+
+Ensuite aller sur internet entrer @IP/glpi
+
+Comme il s’agit d’une première installation, on clique sur le bouton « Installer » :
+Ensuite les logs du serveu SQL sera localhost, l'utilisateur sera glpi et son mot de passe glpi
+
+ogiquement, la connexion à la base « glpi » doit s’effectuer (message « Connexion à la base de données réussie »). Si la connexion
+est fonctionnelle, la base « glpi » apparaît. On la sélectionne et on clique le bouton « Continuer » 
+
+Connectez vous a votre compte avec la commande glpi et comme mot de passe glpi
+
+Pour le fichier « install.php », il faudra revenir sur notre serveur web (Debian) et taper cette commande pour supprimer le fichier
+par mesure de sécurité : rm -f /var/www/html/glpi/install/install.php
+
+Tuto: https://tutos-info.fr/wp-content/uploads/2023/12/TUTORIEL-INSTALLER-GLPI-10.0.10-SUR-DEBIAN-12.pdf
