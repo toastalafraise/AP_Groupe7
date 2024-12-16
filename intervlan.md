@@ -1,4 +1,4 @@
-# Création des vlan#
+# Configuration switch#
 
 
 ````
@@ -9,7 +9,7 @@ switch#interface fa[numero du port]
 switch(config-if)#switchport mode trunk 
 switch(config-if)#no shutdown
 ````
-
+# Configuration router#
 ````
 router#interface gigabit [numero du port]
 router(config-if)#no shutdown
