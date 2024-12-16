@@ -1,0 +1,15 @@
+Mise en place du user admin avec la commande:
+adduser admin 
+mot de passe sio2024
+
+1) Installation du serveur:
+- apt update
+- apt install tftpd-hpa
+
+démarrage automatique du serveur
+- systemctl enable tftpd-hpa
+- systemctl status tftpd-hpa pour vérifier son état 
+
+2) Configuration du serveur TFTP
+- nano /etc/default/tftpd-hpa
+- Mettre ses valeurs: 
