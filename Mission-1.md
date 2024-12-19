@@ -6,4 +6,9 @@
 | :---         |     :---:      |          ---: |
 | 10   | Server     | 192.168.110/24   |
 | 20     | Chirurgie      | 192.168.120.0/24      |
-|||
+|30|Neurologie|
+|40|Radiologie|
+|50|Backup|
+|60|Wifi|
+|100|Administration|
+|500|Patients|
