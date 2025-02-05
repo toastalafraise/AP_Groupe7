@@ -66,3 +66,4 @@ Configurer le site phpMyAdmin grâce au commande :
 Redémarrer le service grâce à la commande systemctl reload apache2.service
 - Aller dans votre base de donnée mariadb et créer l'utilisateur dev avec la commande CREATE USER 'dev'à'%' IDENTIFIED BY 'Sio2024';
 - Donner les droits d'accés avec la commande GRANT ALL PRIVILEGES ON *.* TO 'dev'@'%' WITH GRANT OPTION;
+- Aller sur le site  http://@ip/phpmyadmin/index.php 
