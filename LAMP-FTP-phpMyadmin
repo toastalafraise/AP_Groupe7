@@ -45,3 +45,24 @@ Mettez a jour les paquets de votre machine
 -Relancer le serveur aache avec la commande systemctl restart apache 2
 - Ajouter un fichier index.html dans le dossier /var/www/html
 - Aller sur internet votre adresse IP et vous verrez votre site mis en route
+
+
+phpmyadmin :
+
+Pour installer phpmyadmin vous devez:
+- Installer mariadb (SyMariaDB est un système de gestion de base de données édité sous licence
+GPL. Il s'agit d'un embranchement communautaire de MySQL) grâce à la commande apt install
+mariadb-server mariadb-client
+- Installer Php grâce a la commande apt install phpmyadmin apache2 php-zip php-gd php-
+json php-curl libapache2-mod-php
+- Configurer un mot de passe sur votre mariadb pour le sécuriser, pour faire ceci entrer la
+commande: - mysql –u root –p ensuite entrer les commandes SQL suivantes :
+◦ - Use mysql;
+◦ - SET PASSWORD FOR 'root'@'localhost' = PASSWORD(‘Mot2pass’)
+◦ - flush privileges; ( prendre en compte les modifications)
+Configurer le site phpMyAdmin grâce au commande :
+◦ s /etc/phpmyadmin/apache.conf /etc/apache2/conf-available/phpmyadmin.conf
+◦ a2enconf phpmyadmin.conf
+Redémarrer le service grâce à la commande systemctl reload apache2.service
+- Aller dans votre base de donnée mariadb et créer l'utilisateur dev avec la commande CREATE USER 'dev'à'%' IDENTIFIED BY 'Sio2024';
+- Donner les droits d'accés avec la commande GRANT ALL PRIVILEGES ON *.* TO 'dev'@'%' WITH GRANT OPTION;
