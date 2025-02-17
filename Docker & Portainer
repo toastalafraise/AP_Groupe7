@@ -92,3 +92,4 @@ docker run -d -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.
 
 Pour accéder a portainer entrer @IP/9000
 
+Id : admin mdp : Thomasski-11
