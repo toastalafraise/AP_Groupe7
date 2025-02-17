@@ -1,13 +1,34 @@
-Etape 1 Installation manuelle de Docker Engine & Docker compose (docker-compose-plugin v2).
+Installation manuelle de Docker Engine & Docker compose (docker-compose-plugin v2)
 
-Installer les composants requis.
+Installation de Docker Engine & Docker-compose-plugin v2.
+
+Installation de Docker sur Debian 12.
+
+Il existe plusieurs façons d’installer Docker sur votre système Debian 12.
+
+Il est disponible dans les dépôts officiels de Debian, où il peut être facilement installé avec une seule commande APT.
+
+Cependant, un inconvénient de cette approche est que la version disponible n’est pas toujours la plus récente.
+
+Pour cette raison, je vais vous montrer comment installer Docker sur Debian 12 à partir du dépôt officiel de Docker.
+
+Cette approche garantit que vous obtenez toujours la dernière version à jour et que vous recevrez automatiquement toutes les futures mises à jour logicielles dès qu’elles seront disponibles.
+
+Rappel sur la commande sudo, si celle-ci n'est pas installée :
+
+su - root
+apt install sudo
+usermod -aG sudo cyberlitech
+init 6
+
+Étape 1 : Installer les composants requis.
 
 Tout d’abord, exécutez les deux commandes ci-dessous pour mettre à jour l’index du package et installer les composants requis nécessaires pour ajouter et utiliser un nouveau référentiel HTTPS.
 
-- sudo apt update
+sudo apt update
 sudo apt install apt-transport-https ca-certificates curl gnupg
 
-- Étape 2: Ajouter la clé GPG Repo de Docker.
+Étape 2: Ajouter la clé GPG Repo de Docker.
 
 Ensuite, importez la clé du dépôt Docker GPG dans votre système Debian.
 
@@ -63,4 +84,11 @@ sudo docker compose version
 Nous allons exécuter une application simple appelée « hello-world ».
 
 sudo docker run hello-world
+
+
+
+Installation de Portainer : 
+docker run -d -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer-ce
+
+Pour accéder a portainer entrer @IP/9000
 
