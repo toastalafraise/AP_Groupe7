@@ -85,7 +85,7 @@ Nous allons exécuter une application simple appelée « hello-world ».
 
 sudo docker run hello-world
 
-
+lien du tuto : https://github.com/0xCyberLiTech/Docker/blob/main/DOCKER-et-DOCKER-COMPOSE-Installation-manuelle.md
 
 Installation de Portainer : 
 docker run -d -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer-ce
@@ -93,3 +93,5 @@ docker run -d -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.
 Pour accéder a portainer entrer @IP/9000
 
 Id : admin mdp : Thomasski-11
+
+lien du tuto: https://github.com/0xCyberLiTech/Docker/blob/main/PORTAINER-Installation-manuelle.md
