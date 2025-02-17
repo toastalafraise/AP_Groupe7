@@ -1,0 +1,68 @@
+Mise en place de GLPI avec docker: 
+
+Crée un dossier pour GLPI: 
+mkdir -p /opt/glpi && cd /opt/glpi
+
+Crée un fichier docker-compose.yml: 
+nano docker-compose.yml
+
+
+Et y mettre ceci: 
+--------------------------------------------------------------------------------------------
+version: '3.8'
+
+services:
+  db:
+    image: mariadb:10.5
+    container_name: glpi-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: glpi
+      MYSQL_USER: glpi
+      MYSQL_PASSWORD: glpipassword
+    volumes:
+      - db_data:/var/lib/mysql
+
+  glpi:
+    image: diouxx/glpi
+    container_name: glpi
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - "8081:80"  # ⚠️ Attention : on évite 8080 car Zabbix l'utilise déjà
+    environment:
+      TIMEZONE: Europe/Paris
+    volumes:
+      - glpi_data:/var/www/html
+
+volumes:
+  db_data:
+  glpi_data:
+----------------------------------------------------------------------------------------------------
+
+Maintenant lancer le conteneur avec la commande: docker compose up -d
+
+Aller dans votre navigateur web et entre @ip:8081
+
+Ensuite lors de l'installation de glpi vous devez :
+
+
+Etape 1
+
+serveur sql: db
+uilisateur sql: glpi
+mot de passe sql: glpipassword
+
+etape 2 : selectyionner la base de données glpi
+
+etape 3 : ok 
+
+etape 4 : continuer 
+
+etyape 5 : continuer 
+
+etape 6 : utiliser glpi 
+
+Connectez vous : id et mdp : glpi 
