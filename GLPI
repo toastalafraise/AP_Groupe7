@@ -70,64 +70,26 @@ Connectez vous : id et mdp : glpi
 
 
 Installation du plugin fusion inventory :
-fais moi donc la manip
-Réponse
 
-Bien sûr, je vais vous guider à travers les étapes pour installer le plugin GLPI Inventory sur votre GLPI 10.0.18 dans un environnement Docker. Voici la procédure détaillée :
-1.
+Etape 1:
+Entrer tout d'abord dans le contenur de glpi avec la commande 
 
-bash
-wget https://github.com/glpi-project/glpi-inventory-plugin/releases/download/1.3.4/glpi-glpiinventory-1.3.4.tar.bz2
+Entrer dans le conteneur glpi à l'aide de la commande docker docker exec -t glpi /bin/bash
 
-2.
 
-bash
-tar -xjf glpi-glpiinventory-1.3.4.tar.bz2
+Etape 2: 
+Télécharger le paquets : wget https://github.com/glpi-project/glpi-inventory-plugin/releases/download/1.3.4/glpi-glpiinventory-1.3.4.tar.bz2 pour s'assuré de la comptabilité avec la version de glpi en 10.0.18
 
-3.
 
-bash
-mv glpiinventory glpi-inventory
+Etape 3:
+Il faut extraire le fichier avec la commande : tar -xjf glpi-glpiinventory-1.3.4.tar.bz2
 
-4.
+Etape 4:
+Il faut maintenant déplacer vos ficher dans le dossier mv glpiinventory /var/www/html/plugins/
 
-Remplacez <container_id> par l'ID ou le nom de votre conteneur GLPI :
+Etape 5:
+Changer les permissions avec la commande : chown -R www-data:www-data /var/www/html/plugins/glpiinventory
 
-bash
-docker cp glpi-inventory <container_id>:/var/www/html/glpi/plugins/
+Etape 6:
+Aller dans GLpi et dans plugins et activer votre plugins
 
-5.
-
-bash
-docker exec -it <container_id> /bin/bash
-
-6.
-
-Une fois dans le conteneur :
-
-bash
-chown -R www-data:www-data /var/www/html/glpi/plugins/glpi-inventory
-
-7.
-
-    Connectez-vous à l'interface web de GLPI en tant qu'administrateur.
-
-    Allez dans "Configuration" > "Plugins".
-
-    Trouvez "GLPI Inventory" dans la liste.
-
-    Cliquez sur "Installer", puis sur "Activer".
-
-8.
-
-    Allez dans "Administration" > "Entités".
-
-    Cliquez sur "Root entity".
-
-    Dans l'onglet "GLPI Inventory", configurez l'URL de votre serveur GLPI.
-
-9.
-
-Vérifiez que le plugin est correctement installé et activé dans la liste des plugins.
-
-N'oubliez pas de sauvegarder votre configuration GLPI avant de procéder à ces modifications. Si vous rencontrez des problèmes ou avez besoin d'aide supplémentaire, n'hésitez pas à me le faire savoir.
