@@ -1,69 +1,154 @@
-- Créer un utilisateur avec la commande adduser (utilisateur victor mdp sio2024)
+Mise en place et configuration d’un environnement serveur FTP et LAMP avec gestion des droits automatisée
 
-FTP: 
+Ce guide présente les étapes détaillées pour configurer un environnement serveur complet, incluant un serveur FTP sécurisé avec vsftpd, un serveur web LAMP, l’interface de gestion phpMyAdmin, ainsi que l'automatisation des droits pour l'utilisateur Victor, garantissant un environnement stable, sécurisé et adapté aux besoins de développement.
+1. Création de l'utilisateur
 
-- Installation de vsftpd avec la commande apt install vsftpd
-- Lancer le serveur avec la commande systemctl start vsftpd
-- Démarrer le serveur a chaque lancement avec la commande systemctl enable vsftpd
-- Installer ufw avec la commande apt install ufw
-- Ouvrir les ports 20 et 21 de notre serveur avec la commande ufw allow 20 ou 21
--Copier votre fichier de configuration en cas de problème cp /etc/vsftpd.conf
-/etc/vsftpd.bak
--Modifier votre fichier de configuration nano /etc/vsftpd.conf
--Modifier les lignes : - anonymous_enable=NO
-- locale_enable=YES
-- write_enable=YES
-- pam_service_name=vsftpd
-Ne surtout pas modifier la ligne« listen=NO » car elle peut entrainer des erreurs par la suite sur le serveur
-- Ajouter notre utilisateur à la liste de vsftp avec la commande echo "victor" | tee-a /etc/vsftpd.userlist
+Création de l'utilisateur Victor avec un mot de passe sécurisé :
 
-Source : https://www.youtube.com/watch?v=6LNibes6lWQ&feature=youtu.be
+adduser victor
+# Mot de passe : sio2024
 
+2. Configuration du serveur FTP (vsftpd)
 
-Lamp:
+Étapes d'installation et de configuration :
 
-Mettez a jour les paquets de votre machine
-- Installer le avec la commande apt install –y apache2
-- Vérifier son installation avec la commande systemctl status apache2
-- Attribuer les droits d’écriture lecture et d’exécution a victor sur le chemin /var/www
-- Il faut créer le groupe dev avec la commande addgroup dev
-- Ajouter victor a notre groupe avec la commande usermod -aG dev victor
--Rendre le groupe dev propriétaire du chemin /var/www/html avec la commande chown -R:dev /var/www/html3
--Donner les droits de lecture et exécution au groupe avec la commande chmod -R 777 /var/www/html
-- Modifier la racine poruque chaque dev accède directement au chemin /var/www pour faire ceci aller dans le fichier nano /etcpasswd et modifier la racine de la ligne victo
-- Mettre en place des permissions sur le chemin html avec la commande chmod –R
-775 /var/www/html
-- chown –R www-data:www-data /var/www/html
--Aller dans le fichier nano/apache2/apache2.conf
--Aller jusqu’à cette ligne et configurer cette partie :
+    Installation de vsftpd :
+
+apt install vsftpd
+
+    Lancement et activation au démarrage :
+
+systemctl start vsftpd
+systemctl enable vsftpd
+
+    Sécurisation avec le pare-feu UFW :
+
+apt install ufw
+ufw allow 20/tcp
+ufw allow 21/tcp
+
+    Sauvegarde du fichier de configuration :
+
+cp /etc/vsftpd.conf /etc/vsftpd.bak
+
+    Modification du fichier de configuration :
+
+nano /etc/vsftpd.conf
+
+Modifier les lignes suivantes :
+
+anonymous_enable=NO
+local_enable=YES
+write_enable=YES
+pam_service_name=vsftpd
+
+⚠️ Ne pas modifier la ligne listen=NO pour éviter des erreurs au démarrage du service.
+
+    Ajout de l'utilisateur à la liste autorisée :
+
+echo "victor" | tee -a /etc/vsftpd.userlist
+
+3. Mise en place du serveur LAMP
+3.1. Installation d’Apache
+
+    Mettre à jour les paquets :
+
+apt update && apt upgrade
+
+    Installer Apache :
+
+apt install -y apache2
+
+    Vérifier le service :
+
+systemctl status apache2
+
+3.2. Gestion des droits et utilisateurs
+
+    Attribuer les droits d’accès à Victor sur /var/www :
+
+addgroup dev
+usermod -aG dev victor
+chown -R :dev /var/www/html
+chmod -R 775 /var/www/html
+
+    Changer le propriétaire web par défaut pour sécuriser :
+
+chown -R www-data:www-data /var/www/html
+
+    Modifier le chemin racine de l’utilisateur Victor (optionnel) :
+
+nano /etc/passwd
+
+Changer le répertoire personnel pour /var/www.
+
+    Configurer Apache :
+
+nano /etc/apache2/apache2.conf
+
+Ajouter ou modifier le bloc suivant :
 
 <Directory />
   Options Indexes FollowSymLinks
-  AllowOveriide None
+  AllowOverride None
   Require all granted
 </Directory>
--Relancer le serveur aache avec la commande systemctl restart apache 2
-- Ajouter un fichier index.html dans le dossier /var/www/html
-- Aller sur internet votre adresse IP et vous verrez votre site mis en route
 
+    Redémarrer Apache :
 
-phpmyadmin :
+systemctl restart apache2
 
-Pour installer phpmyadmin vous devez:
-- Installer mariadb (SyMariaDB est un système de gestion de base de données édité sous licence
-GPL. Il s'agit d'un embranchement communautaire de MySQL) grâce à la commande apt install
-mariadb-server mariadb-client
-- Installer Php grâce a la commande apt install phpmyadmin apache2 php-zip php-gd php-
-json php-curl libapache2-mod-php
-- Configurer un mot de passe sur votre mariadb pour le sécuriser, pour faire ceci entrer la
-commande: - mysql –u root –p ensuite entrer les commandes SQL suivantes :
-◦ - Use mysql;
-◦ - SET PASSWORD FOR 'root'@'localhost' = PASSWORD(‘Mot2pass’)
-◦ - flush privileges; ( prendre en compte les modifications)
-Configurer le site phpMyAdmin grâce au commande :
-◦ s /etc/phpmyadmin/apache.conf /etc/apache2/conf-available/phpmyadmin.conf
-◦ a2enconf phpmyadmin.conf
-Redémarrer le service grâce à la commande systemctl reload apache2.service
-- Aller dans votre base de donnée mariadb et créer l'utilisateur dev avec la commande CREATE USER 'dev'à'%' IDENTIFIED BY 'Sio2024';
-- Donner les droits d'accés avec la commande GRANT ALL PRIVILEGES ON *.* TO 'dev'@'%' WITH GRANT OPTION;
-- Aller sur le site  http://@ip/phpmyadmin/index.php 
+    Créer un fichier index.html pour tester le site :
+
+echo "<h1>Site Web en ligne</h1>" > /var/www/html/index.html
+
+Accéder au site via : http://<votre_ip_local>
+4. Installation et configuration de phpMyAdmin
+4.1. Installation de MariaDB et PHP
+
+apt install mariadb-server mariadb-client
+apt install phpmyadmin apache2 php-zip php-gd php-json php-curl libapache2-mod-php
+
+4.2. Sécurisation de MariaDB
+
+mysql -u root -p
+
+Commandes SQL à entrer :
+
+USE mysql;
+SET PASSWORD FOR 'root'@'localhost' = PASSWORD('Mot2pass');
+FLUSH PRIVILEGES;
+
+4.3. Intégration de phpMyAdmin à Apache
+
+cp /etc/phpmyadmin/apache.conf /etc/apache2/conf-available/phpmyadmin.conf
+a2enconf phpmyadmin.conf
+systemctl reload apache2.service
+
+Accès à l’interface : http://<votre_ip_local>/phpmyadmin
+4.4. Création d’un utilisateur base de données pour Victor
+
+CREATE USER 'dev'@'%' IDENTIFIED BY 'Sio2024';
+GRANT ALL PRIVILEGES ON *.* TO 'dev'@'%' WITH GRANT OPTION;
+
+5. Script d’automatisation des permissions
+
+Pour garantir que chaque modification ou ajout dans /var/www/html attribue automatiquement les bons droits à l’utilisateur Victor et au groupe dev, un script d’automatisation peut être mis en place avec inotify-tools :
+Exemple de script (à adapter) :
+
+#!/bin/bash
+# Script à lancer en tâche de fond
+inotifywait -m -r -e create,modify /var/www/html |
+while read path action file; do
+  echo "Fichier modifié : $file"
+  chown victor:dev "$path$file"
+  chmod 775 "$path$file"
+done
+
+Rendez-le exécutable :
+
+chmod +x /usr/local/bin/auto_permission.sh
+
+Et lancez-le au démarrage via crontab ou un service systemd.
+
+Ce guide permet de mettre en place une infrastructure serveur robuste et sécurisée, avec des services FTP et LAMP opérationnels, tout en facilitant le travail des développeurs grâce à des droits gérés automatiquement.
