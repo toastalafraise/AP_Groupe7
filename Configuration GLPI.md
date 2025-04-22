@@ -30,3 +30,7 @@ Synchronisation des utilisateurs :
     Connectez-vous avec l'un des utilisateurs.
 
 Inventorier le parc : Installer le plugin FusionInventory, l'activer, et vous aurez l'inventaire du parc.
+
+
+Sources : https://thomas-portfolio.fr/TP-Gestion%20incidents%20Thomas%20Grzesinski.pdf
+          https://neptunet.fr/glpi-ad/
