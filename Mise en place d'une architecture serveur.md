@@ -152,3 +152,5 @@ chmod +x /usr/local/bin/auto_permission.sh
 Et lancez-le au démarrage via crontab ou un service systemd.
 
 Ce guide permet de mettre en place une infrastructure serveur robuste et sécurisée, avec des services FTP et LAMP opérationnels, tout en facilitant le travail des développeurs grâce à des droits gérés automatiquement.
+
+Source : https://thomas-portfolio.fr/TP-Mise%20en%20place%20d%E2%80%99une%20architecture%20serveur.pdf
