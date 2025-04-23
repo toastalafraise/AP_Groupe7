@@ -1,0 +1,79 @@
+INFO: starting new backup job: vzdump 500 --node proxmox7 --notes-template '{{guestname}}' --storage local --mode snapshot --compress zstd --remove 0 --notification-mode auto
+INFO: Starting Backup of VM 500 (qemu)
+INFO: Backup started at 2025-04-23 11:25:58
+INFO: status = running
+INFO: VM Name: PFSENSEAP7
+INFO: include disk 'scsi0' 'local-lvm:vm-500-disk-0' 20G
+INFO: backup mode: snapshot
+INFO: ionice priority: 7
+INFO: snapshots found (not included into backup)
+INFO: creating vzdump archive '/var/lib/vz/dump/vzdump-qemu-500-2025_04_23-11_25_58.vma.zst'
+INFO: started backup task '18e7a14b-7494-4c23-bef3-5449c55fbda1'
+INFO: resuming VM again
+INFO:   6% (1.2 GiB of 20.0 GiB) in 3s, read: 410.8 MiB/s, write: 68.0 MiB/s
+INFO:   7% (1.5 GiB of 20.0 GiB) in 6s, read: 115.4 MiB/s, write: 115.4 MiB/s
+INFO:   9% (1.9 GiB of 20.0 GiB) in 9s, read: 110.5 MiB/s, write: 110.5 MiB/s
+INFO:  10% (2.2 GiB of 20.0 GiB) in 12s, read: 104.0 MiB/s, write: 104.0 MiB/s
+INFO:  12% (2.6 GiB of 20.0 GiB) in 15s, read: 136.4 MiB/s, write: 136.4 MiB/s
+INFO:  14% (2.9 GiB of 20.0 GiB) in 18s, read: 108.1 MiB/s, write: 108.1 MiB/s
+INFO:  15% (3.2 GiB of 20.0 GiB) in 21s, read: 91.4 MiB/s, write: 91.4 MiB/s
+INFO:  17% (3.5 GiB of 20.0 GiB) in 24s, read: 130.5 MiB/s, write: 130.5 MiB/s
+INFO:  19% (3.9 GiB of 20.0 GiB) in 27s, read: 123.9 MiB/s, write: 123.9 MiB/s
+INFO:  20% (4.2 GiB of 20.0 GiB) in 30s, read: 93.3 MiB/s, write: 93.3 MiB/s
+INFO:  23% (4.6 GiB of 20.0 GiB) in 33s, read: 145.8 MiB/s, write: 145.8 MiB/s
+INFO:  24% (4.9 GiB of 20.0 GiB) in 36s, read: 109.0 MiB/s, write: 109.0 MiB/s
+INFO:  25% (5.1 GiB of 20.0 GiB) in 39s, read: 68.1 MiB/s, write: 68.1 MiB/s
+INFO:  27% (5.4 GiB of 20.0 GiB) in 42s, read: 112.4 MiB/s, write: 112.4 MiB/s
+INFO:  28% (5.8 GiB of 20.0 GiB) in 45s, read: 115.9 MiB/s, write: 115.9 MiB/s
+INFO:  30% (6.1 GiB of 20.0 GiB) in 48s, read: 122.5 MiB/s, write: 122.5 MiB/s
+INFO:  32% (6.5 GiB of 20.0 GiB) in 51s, read: 113.8 MiB/s, write: 113.8 MiB/s
+INFO:  33% (6.8 GiB of 20.0 GiB) in 54s, read: 100.3 MiB/s, write: 100.2 MiB/s
+INFO:  35% (7.1 GiB of 20.0 GiB) in 57s, read: 114.7 MiB/s, write: 114.7 MiB/s
+INFO:  37% (7.4 GiB of 20.0 GiB) in 1m, read: 107.0 MiB/s, write: 107.0 MiB/s
+INFO:  38% (7.8 GiB of 20.0 GiB) in 1m 3s, read: 115.9 MiB/s, write: 115.9 MiB/s
+INFO:  40% (8.1 GiB of 20.0 GiB) in 1m 6s, read: 104.6 MiB/s, write: 104.6 MiB/s
+INFO:  41% (8.3 GiB of 20.0 GiB) in 1m 9s, read: 85.3 MiB/s, write: 85.3 MiB/s
+INFO:  43% (8.6 GiB of 20.0 GiB) in 1m 12s, read: 99.3 MiB/s, write: 99.3 MiB/s
+INFO:  44% (8.9 GiB of 20.0 GiB) in 1m 15s, read: 111.3 MiB/s, write: 111.3 MiB/s
+INFO:  46% (9.3 GiB of 20.0 GiB) in 1m 18s, read: 108.1 MiB/s, write: 108.1 MiB/s
+INFO:  47% (9.6 GiB of 20.0 GiB) in 1m 21s, read: 106.0 MiB/s, write: 106.0 MiB/s
+INFO:  49% (9.9 GiB of 20.0 GiB) in 1m 24s, read: 107.2 MiB/s, write: 107.2 MiB/s
+INFO:  51% (10.2 GiB of 20.0 GiB) in 1m 27s, read: 115.5 MiB/s, write: 115.5 MiB/s
+INFO:  52% (10.5 GiB of 20.0 GiB) in 1m 30s, read: 109.9 MiB/s, write: 109.9 MiB/s
+INFO:  54% (10.8 GiB of 20.0 GiB) in 1m 33s, read: 102.5 MiB/s, write: 102.5 MiB/s
+INFO:  55% (11.1 GiB of 20.0 GiB) in 1m 36s, read: 95.8 MiB/s, write: 95.8 MiB/s
+INFO:  57% (11.4 GiB of 20.0 GiB) in 1m 39s, read: 108.9 MiB/s, write: 108.9 MiB/s
+INFO:  58% (11.8 GiB of 20.0 GiB) in 1m 42s, read: 112.0 MiB/s, write: 112.0 MiB/s
+INFO:  60% (12.1 GiB of 20.0 GiB) in 1m 45s, read: 114.2 MiB/s, write: 114.2 MiB/s
+INFO:  62% (12.4 GiB of 20.0 GiB) in 1m 48s, read: 109.6 MiB/s, write: 109.6 MiB/s
+INFO:  63% (12.8 GiB of 20.0 GiB) in 1m 51s, read: 112.2 MiB/s, write: 112.2 MiB/s
+INFO:  65% (13.1 GiB of 20.0 GiB) in 1m 55s, read: 77.0 MiB/s, write: 77.0 MiB/s
+INFO:  66% (13.4 GiB of 20.0 GiB) in 1m 58s, read: 108.4 MiB/s, write: 108.4 MiB/s
+INFO:  68% (13.7 GiB of 20.0 GiB) in 2m 1s, read: 105.3 MiB/s, write: 105.3 MiB/s
+INFO:  70% (14.0 GiB of 20.0 GiB) in 2m 4s, read: 117.3 MiB/s, write: 117.3 MiB/s
+INFO:  71% (14.3 GiB of 20.0 GiB) in 2m 7s, read: 95.0 MiB/s, write: 95.0 MiB/s
+INFO:  73% (14.6 GiB of 20.0 GiB) in 2m 10s, read: 111.3 MiB/s, write: 111.3 MiB/s
+INFO:  74% (15.0 GiB of 20.0 GiB) in 2m 13s, read: 117.0 MiB/s, write: 117.0 MiB/s
+INFO:  76% (15.4 GiB of 20.0 GiB) in 2m 16s, read: 132.6 MiB/s, write: 132.5 MiB/s
+INFO:  78% (15.7 GiB of 20.0 GiB) in 2m 19s, read: 109.4 MiB/s, write: 109.4 MiB/s
+INFO:  80% (16.0 GiB of 20.0 GiB) in 2m 22s, read: 111.7 MiB/s, write: 111.7 MiB/s
+INFO:  81% (16.4 GiB of 20.0 GiB) in 2m 25s, read: 122.7 MiB/s, write: 122.7 MiB/s
+INFO:  83% (16.7 GiB of 20.0 GiB) in 2m 28s, read: 122.7 MiB/s, write: 122.6 MiB/s
+INFO:  85% (17.0 GiB of 20.0 GiB) in 2m 31s, read: 104.8 MiB/s, write: 104.7 MiB/s
+INFO:  86% (17.3 GiB of 20.0 GiB) in 2m 34s, read: 103.2 MiB/s, write: 103.2 MiB/s
+INFO:  88% (17.6 GiB of 20.0 GiB) in 2m 37s, read: 97.7 MiB/s, write: 97.7 MiB/s
+INFO:  89% (17.9 GiB of 20.0 GiB) in 2m 40s, read: 95.3 MiB/s, write: 95.3 MiB/s
+INFO:  91% (18.2 GiB of 20.0 GiB) in 2m 43s, read: 103.7 MiB/s, write: 103.6 MiB/s
+INFO:  92% (18.5 GiB of 20.0 GiB) in 2m 46s, read: 111.2 MiB/s, write: 111.2 MiB/s
+INFO:  94% (18.9 GiB of 20.0 GiB) in 2m 49s, read: 113.5 MiB/s, write: 113.5 MiB/s
+INFO:  95% (19.2 GiB of 20.0 GiB) in 2m 52s, read: 109.3 MiB/s, write: 109.3 MiB/s
+INFO: 100% (20.0 GiB of 20.0 GiB) in 2m 55s, read: 279.5 MiB/s, write: 110.5 MiB/s
+INFO: backup is sparse: 1.50 GiB (7%) total zero data
+INFO: transferred 20.00 GiB in 175 seconds (117.0 MiB/s)
+INFO: archive file size: 2.44GB
+INFO: adding notes to backup
+INFO: Finished Backup of VM 500 (00:02:56)
+INFO: Backup finished at 2025-04-23 11:28:54
+INFO: Backup job finished successfully
+INFO: notified via target `mail-to-root`
+TASK OK
