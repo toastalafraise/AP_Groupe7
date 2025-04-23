@@ -1,0 +1,42 @@
+INFO: starting new backup job: vzdump 507 --remove 0 --notification-mode auto --compress zstd --storage local --mode snapshot --notes-template '{{guestname}}' --node proxmox7
+INFO: Starting Backup of VM 507 (qemu)
+INFO: Backup started at 2025-04-23 11:11:53
+INFO: status = running
+INFO: VM Name: TFTP
+INFO: include disk 'scsi0' 'local-lvm:vm-507-disk-0' 10G
+INFO: backup mode: snapshot
+INFO: ionice priority: 7
+INFO: snapshots found (not included into backup)
+INFO: creating vzdump archive '/var/lib/vz/dump/vzdump-qemu-507-2025_04_23-11_11_53.vma.zst'
+INFO: started backup task '287557fa-f0a8-4c4e-816d-7660f21b15df'
+INFO: resuming VM again
+INFO:   4% (416.9 MiB of 10.0 GiB) in 3s, read: 139.0 MiB/s, write: 123.3 MiB/s
+INFO:   7% (808.4 MiB of 10.0 GiB) in 6s, read: 130.5 MiB/s, write: 109.3 MiB/s
+INFO:  11% (1.1 GiB of 10.0 GiB) in 9s, read: 108.8 MiB/s, write: 103.7 MiB/s
+INFO:  14% (1.4 GiB of 10.0 GiB) in 12s, read: 101.5 MiB/s, write: 99.2 MiB/s
+INFO:  17% (1.7 GiB of 10.0 GiB) in 15s, read: 108.8 MiB/s, write: 104.3 MiB/s
+INFO:  21% (2.2 GiB of 10.0 GiB) in 18s, read: 147.4 MiB/s, write: 108.6 MiB/s
+INFO:  25% (2.5 GiB of 10.0 GiB) in 21s, read: 126.9 MiB/s, write: 125.9 MiB/s
+INFO:  28% (2.9 GiB of 10.0 GiB) in 24s, read: 117.2 MiB/s, write: 116.8 MiB/s
+INFO:  32% (3.2 GiB of 10.0 GiB) in 27s, read: 113.6 MiB/s, write: 110.0 MiB/s
+INFO:  36% (3.6 GiB of 10.0 GiB) in 30s, read: 143.8 MiB/s, write: 141.2 MiB/s
+INFO:  39% (4.0 GiB of 10.0 GiB) in 33s, read: 122.0 MiB/s, write: 119.7 MiB/s
+INFO:  44% (4.4 GiB of 10.0 GiB) in 36s, read: 149.8 MiB/s, write: 114.7 MiB/s
+INFO:  45% (4.6 GiB of 10.0 GiB) in 39s, read: 56.8 MiB/s, write: 55.6 MiB/s
+INFO:  49% (5.0 GiB of 10.0 GiB) in 42s, read: 126.9 MiB/s, write: 120.3 MiB/s
+INFO:  53% (5.4 GiB of 10.0 GiB) in 45s, read: 142.6 MiB/s, write: 111.9 MiB/s
+INFO:  57% (5.7 GiB of 10.0 GiB) in 48s, read: 111.2 MiB/s, write: 103.8 MiB/s
+INFO:  61% (6.1 GiB of 10.0 GiB) in 51s, read: 151.0 MiB/s, write: 109.7 MiB/s
+INFO:  65% (6.6 GiB of 10.0 GiB) in 54s, read: 147.4 MiB/s, write: 146.3 MiB/s
+INFO:  84% (8.4 GiB of 10.0 GiB) in 57s, read: 630.8 MiB/s, write: 105.9 MiB/s
+INFO:  87% (8.8 GiB of 10.0 GiB) in 1m, read: 113.6 MiB/s, write: 109.0 MiB/s
+INFO: 100% (10.0 GiB of 10.0 GiB) in 1m 3s, read: 423.9 MiB/s, write: 102.9 MiB/s
+INFO: backup is sparse: 3.14 GiB (31%) total zero data
+INFO: transferred 10.00 GiB in 63 seconds (162.5 MiB/s)
+INFO: archive file size: 2.39GB
+INFO: adding notes to backup
+INFO: Finished Backup of VM 507 (00:01:03)
+INFO: Backup finished at 2025-04-23 11:12:56
+INFO: Backup job finished successfully
+INFO: notified via target `mail-to-root`
+TASK OK
