@@ -1,0 +1,36 @@
+INFO: starting new backup job: vzdump 502 --notification-mode auto --remove 0 --compress zstd --node proxmox7 --mode snapshot --storage local --notes-template '{{guestname}}'
+INFO: Starting Backup of VM 502 (qemu)
+INFO: Backup started at 2025-04-23 11:30:05
+INFO: status = stopped
+INFO: backup mode: stop
+INFO: ionice priority: 7
+INFO: VM Name: DMZSECOURS
+INFO: include disk 'scsi0' 'local-lvm:vm-502-disk-0' 10G
+INFO: snapshots found (not included into backup)
+INFO: creating vzdump archive '/var/lib/vz/dump/vzdump-qemu-502-2025_04_23-11_30_05.vma.zst'
+INFO: starting kvm to execute backup task
+INFO: started backup task '63b59ee9-174c-4b24-9ced-dbe27fd2de59'
+INFO:   4% (467.6 MiB of 10.0 GiB) in 3s, read: 155.9 MiB/s, write: 109.8 MiB/s
+INFO:   8% (851.9 MiB of 10.0 GiB) in 6s, read: 128.1 MiB/s, write: 111.6 MiB/s
+INFO:  12% (1.3 GiB of 10.0 GiB) in 9s, read: 148.6 MiB/s, write: 133.9 MiB/s
+INFO:  16% (1.7 GiB of 10.0 GiB) in 12s, read: 134.1 MiB/s, write: 109.1 MiB/s
+INFO:  21% (2.1 GiB of 10.0 GiB) in 15s, read: 153.5 MiB/s, write: 115.9 MiB/s
+INFO:  25% (2.5 GiB of 10.0 GiB) in 18s, read: 149.8 MiB/s, write: 140.9 MiB/s
+INFO:  29% (2.9 GiB of 10.0 GiB) in 21s, read: 128.1 MiB/s, write: 124.7 MiB/s
+INFO:  32% (3.3 GiB of 10.0 GiB) in 24s, read: 113.6 MiB/s, write: 110.0 MiB/s
+INFO:  36% (3.7 GiB of 10.0 GiB) in 27s, read: 147.4 MiB/s, write: 105.6 MiB/s
+INFO:  39% (3.9 GiB of 10.0 GiB) in 30s, read: 85.8 MiB/s, write: 56.1 MiB/s
+INFO:  48% (4.9 GiB of 10.0 GiB) in 33s, read: 322.6 MiB/s, write: 77.0 MiB/s
+INFO:  63% (6.3 GiB of 10.0 GiB) in 36s, read: 494.3 MiB/s, write: 61.6 MiB/s
+INFO:  83% (8.3 GiB of 10.0 GiB) in 39s, read: 686.0 MiB/s, write: 24.8 MiB/s
+INFO: 100% (10.0 GiB of 10.0 GiB) in 42s, read: 565.7 MiB/s, write: 414.7 KiB/s
+INFO: backup is sparse: 6.25 GiB (62%) total zero data
+INFO: transferred 10.00 GiB in 42 seconds (243.8 MiB/s)
+INFO: stopping kvm after backup task
+INFO: archive file size: 1.31GB
+INFO: adding notes to backup
+INFO: Finished Backup of VM 502 (00:00:46)
+INFO: Backup finished at 2025-04-23 11:30:51
+INFO: Backup job finished successfully
+INFO: notified via target `mail-to-root`
+TASK OK
