@@ -1,0 +1,40 @@
+INFO: starting new backup job: vzdump 510 --compress zstd --notification-mode auto --remove 0 --notes-template '{{guestname}}' --mode snapshot --storage local --node proxmox7
+INFO: Starting Backup of VM 510 (qemu)
+INFO: Backup started at 2025-04-23 11:45:31
+INFO: status = running
+INFO: VM Name: Zabbix-GLPI
+INFO: include disk 'scsi0' 'local-lvm:vm-510-disk-0' 10G
+INFO: backup mode: snapshot
+INFO: ionice priority: 7
+INFO: snapshots found (not included into backup)
+INFO: creating vzdump archive '/var/lib/vz/dump/vzdump-qemu-510-2025_04_23-11_45_31.vma.zst'
+INFO: started backup task '184e68cd-4f20-4c85-87e6-e5fb7c28cb8d'
+INFO: resuming VM again
+INFO:   4% (416.9 MiB of 10.0 GiB) in 3s, read: 139.0 MiB/s, write: 104.4 MiB/s
+INFO:   7% (804.7 MiB of 10.0 GiB) in 6s, read: 129.3 MiB/s, write: 109.6 MiB/s
+INFO:  11% (1.1 GiB of 10.0 GiB) in 9s, read: 118.4 MiB/s, write: 112.4 MiB/s
+INFO:  15% (1.5 GiB of 10.0 GiB) in 12s, read: 135.4 MiB/s, write: 116.9 MiB/s
+INFO:  19% (1.9 GiB of 10.0 GiB) in 15s, read: 126.9 MiB/s, write: 117.9 MiB/s
+INFO:  24% (2.4 GiB of 10.0 GiB) in 18s, read: 172.8 MiB/s, write: 138.3 MiB/s
+INFO:  28% (2.8 GiB of 10.0 GiB) in 21s, read: 137.8 MiB/s, write: 130.4 MiB/s
+INFO:  31% (3.2 GiB of 10.0 GiB) in 24s, read: 124.5 MiB/s, write: 122.8 MiB/s
+INFO:  35% (3.5 GiB of 10.0 GiB) in 27s, read: 124.5 MiB/s, write: 122.2 MiB/s
+INFO:  38% (3.9 GiB of 10.0 GiB) in 30s, read: 112.4 MiB/s, write: 109.2 MiB/s
+INFO:  43% (4.4 GiB of 10.0 GiB) in 33s, read: 172.8 MiB/s, write: 117.4 MiB/s
+INFO:  61% (6.2 GiB of 10.0 GiB) in 36s, read: 620.4 MiB/s, write: 66.5 MiB/s
+INFO:  64% (6.4 GiB of 10.0 GiB) in 39s, read: 82.9 MiB/s, write: 75.0 MiB/s
+INFO:  68% (6.8 GiB of 10.0 GiB) in 42s, read: 140.1 MiB/s, write: 131.5 MiB/s
+INFO:  80% (8.1 GiB of 10.0 GiB) in 45s, read: 414.5 MiB/s, write: 81.4 MiB/s
+INFO:  84% (8.5 GiB of 10.0 GiB) in 48s, read: 149.8 MiB/s, write: 103.3 MiB/s
+INFO:  88% (8.9 GiB of 10.0 GiB) in 51s, read: 119.6 MiB/s, write: 116.3 MiB/s
+INFO:  97% (9.8 GiB of 10.0 GiB) in 54s, read: 308.8 MiB/s, write: 107.7 MiB/s
+INFO: 100% (10.0 GiB of 10.0 GiB) in 55s, read: 251.1 MiB/s, write: 0 B/s
+INFO: backup is sparse: 4.19 GiB (41%) total zero data
+INFO: transferred 10.00 GiB in 55 seconds (186.2 MiB/s)
+INFO: archive file size: 1.59GB
+INFO: adding notes to backup
+INFO: Finished Backup of VM 510 (00:00:56)
+INFO: Backup finished at 2025-04-23 11:46:27
+INFO: Backup job finished successfully
+INFO: notified via target `mail-to-root`
+TASK OK
