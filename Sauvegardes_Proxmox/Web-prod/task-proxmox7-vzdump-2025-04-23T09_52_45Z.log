@@ -1,0 +1,39 @@
+INFO: trying to get global lock - waiting...
+INFO: got global lock
+INFO: starting new backup job: vzdump 541 --compress zstd --remove 0 --notification-mode auto --node proxmox7 --notes-template '{{guestname}}' --storage local --mode snapshot
+INFO: Starting Backup of VM 541 (qemu)
+INFO: Backup started at 2025-04-23 11:53:38
+INFO: status = running
+INFO: VM Name: Web-prod
+INFO: include disk 'scsi0' 'local-lvm:vm-541-disk-0' 10G
+INFO: backup mode: snapshot
+INFO: ionice priority: 7
+INFO: snapshots found (not included into backup)
+INFO: creating vzdump archive '/var/lib/vz/dump/vzdump-qemu-541-2025_04_23-11_53_38.vma.zst'
+INFO: started backup task 'c6b71b0a-3e64-40d4-ac34-a9672e3b5c5d'
+INFO: resuming VM again
+INFO:   3% (379.0 MiB of 10.0 GiB) in 3s, read: 126.3 MiB/s, write: 87.2 MiB/s
+INFO:   6% (688.8 MiB of 10.0 GiB) in 6s, read: 103.2 MiB/s, write: 81.0 MiB/s
+INFO:  10% (1.0 GiB of 10.0 GiB) in 9s, read: 118.4 MiB/s, write: 109.9 MiB/s
+INFO:  14% (1.5 GiB of 10.0 GiB) in 12s, read: 154.7 MiB/s, write: 133.3 MiB/s
+INFO:  18% (1.9 GiB of 10.0 GiB) in 15s, read: 131.7 MiB/s, write: 116.8 MiB/s
+INFO:  23% (2.4 GiB of 10.0 GiB) in 18s, read: 175.2 MiB/s, write: 139.8 MiB/s
+INFO:  27% (2.8 GiB of 10.0 GiB) in 21s, read: 130.5 MiB/s, write: 124.5 MiB/s
+INFO:  31% (3.1 GiB of 10.0 GiB) in 24s, read: 126.9 MiB/s, write: 125.1 MiB/s
+INFO:  35% (3.6 GiB of 10.0 GiB) in 27s, read: 159.5 MiB/s, write: 115.5 MiB/s
+INFO:  41% (4.1 GiB of 10.0 GiB) in 30s, read: 185.9 MiB/s, write: 102.3 MiB/s
+INFO:  52% (5.2 GiB of 10.0 GiB) in 33s, read: 363.4 MiB/s, write: 49.4 MiB/s
+INFO:  57% (5.7 GiB of 10.0 GiB) in 36s, read: 179.4 MiB/s, write: 0 B/s
+INFO:  62% (6.3 GiB of 10.0 GiB) in 39s, read: 181.2 MiB/s, write: 44.8 MiB/s
+INFO:  71% (7.1 GiB of 10.0 GiB) in 42s, read: 292.5 MiB/s, write: 61.0 MiB/s
+INFO:  87% (8.8 GiB of 10.0 GiB) in 45s, read: 558.7 MiB/s, write: 2.7 KiB/s
+INFO: 100% (10.0 GiB of 10.0 GiB) in 48s, read: 425.9 MiB/s, write: 414.7 KiB/s
+INFO: backup is sparse: 6.22 GiB (62%) total zero data
+INFO: transferred 10.00 GiB in 48 seconds (213.3 MiB/s)
+INFO: archive file size: 1.32GB
+INFO: adding notes to backup
+INFO: Finished Backup of VM 541 (00:00:48)
+INFO: Backup finished at 2025-04-23 11:54:26
+INFO: Backup job finished successfully
+INFO: notified via target `mail-to-root`
+TASK OK
