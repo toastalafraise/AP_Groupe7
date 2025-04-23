@@ -1,0 +1,36 @@
+INFO: starting new backup job: vzdump 509 --mode snapshot --storage local --notes-template '{{guestname}}' --node proxmox7 --notification-mode auto --remove 0 --compress zstd
+INFO: Starting Backup of VM 509 (qemu)
+INFO: Backup started at 2025-04-23 11:43:41
+INFO: status = running
+INFO: VM Name: DMZ
+INFO: include disk 'scsi0' 'local-lvm:vm-509-disk-0' 10G
+INFO: backup mode: snapshot
+INFO: ionice priority: 7
+INFO: creating vzdump archive '/var/lib/vz/dump/vzdump-qemu-509-2025_04_23-11_43_41.vma.zst'
+INFO: started backup task '6ca76873-f399-4c50-9fd8-d3581fafda1b'
+INFO: resuming VM again
+INFO:   4% (489.4 MiB of 10.0 GiB) in 3s, read: 163.1 MiB/s, write: 115.1 MiB/s
+INFO:   8% (841.0 MiB of 10.0 GiB) in 6s, read: 117.2 MiB/s, write: 101.7 MiB/s
+INFO:  10% (1.1 GiB of 10.0 GiB) in 9s, read: 88.2 MiB/s, write: 79.8 MiB/s
+INFO:  15% (1.5 GiB of 10.0 GiB) in 12s, read: 158.3 MiB/s, write: 133.6 MiB/s
+INFO:  19% (1.9 GiB of 10.0 GiB) in 15s, read: 128.1 MiB/s, write: 114.7 MiB/s
+INFO:  24% (2.4 GiB of 10.0 GiB) in 18s, read: 169.8 MiB/s, write: 137.2 MiB/s
+INFO:  27% (2.8 GiB of 10.0 GiB) in 21s, read: 127.4 MiB/s, write: 120.9 MiB/s
+INFO:  30% (3.1 GiB of 10.0 GiB) in 24s, read: 90.8 MiB/s, write: 90.4 MiB/s
+INFO:  35% (3.5 GiB of 10.0 GiB) in 27s, read: 157.1 MiB/s, write: 112.9 MiB/s
+INFO:  38% (3.9 GiB of 10.0 GiB) in 30s, read: 126.9 MiB/s, write: 105.9 MiB/s
+INFO:  48% (4.8 GiB of 10.0 GiB) in 33s, read: 321.5 MiB/s, write: 71.8 MiB/s
+INFO:  60% (6.1 GiB of 10.0 GiB) in 36s, read: 418.5 MiB/s, write: 1.2 MiB/s
+INFO:  67% (6.7 GiB of 10.0 GiB) in 39s, read: 222.5 MiB/s, write: 102.7 MiB/s
+INFO:  78% (7.9 GiB of 10.0 GiB) in 42s, read: 406.4 MiB/s, write: 682.7 KiB/s
+INFO:  90% (9.1 GiB of 10.0 GiB) in 45s, read: 400.2 MiB/s, write: 417.3 KiB/s
+INFO: 100% (10.0 GiB of 10.0 GiB) in 48s, read: 317.3 MiB/s, write: 0 B/s
+INFO: backup is sparse: 6.22 GiB (62%) total zero data
+INFO: transferred 10.00 GiB in 48 seconds (213.3 MiB/s)
+INFO: archive file size: 1.31GB
+INFO: adding notes to backup
+INFO: Finished Backup of VM 509 (00:00:48)
+INFO: Backup finished at 2025-04-23 11:44:29
+INFO: Backup job finished successfully
+INFO: notified via target `mail-to-root`
+TASK OK
