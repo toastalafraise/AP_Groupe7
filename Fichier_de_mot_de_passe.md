@@ -34,4 +34,14 @@ DMZ / Web-prod : 192.168.10.2 / 192.168.110.5
 WINDOWS-SERV-AP : 192.168.110.20
               Identifiant : Administrateur
               Mot de passe : sio2024.
+
+Switch : 192.168.200.1
+       Identifiant : admin
+       mot de passe : azerty
+
+Router : 192.168.200.254
+       Identifiant : admin
+       Mot de passe : azerty
+
+
       
