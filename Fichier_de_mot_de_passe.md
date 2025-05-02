@@ -43,5 +43,17 @@ Router : 192.168.200.254
        Identifiant : admin
        Mot de passe : azerty
 
+Utilisateur Chirurgien : 
+       Identifiant : Chir
+       Mot de passe : sio2024.
+
+Utilisateur Neurologie : 
+       Identifiant : USER_NEUR
+       Mot de passe : sio2024.
+
+Utilisateur Radiologie
+       Identifiant : RAD
+       Mot de passe : sio2024.
+
 
       
