@@ -69,3 +69,24 @@ Sur le proxmox
 
 Créer le vlan 300 et le raccorder a une machine virutel 
 
+
+TFTP : 
+
+Faire une sauvegarde 
+copy running-config tftp:
+Address or name of remost [}? [Ip du serveur TFTP] 192.168.110.6
+Destination filename [ce_2-config]? [nom du fichier] 
+
+Restaurer une config
+copy tftp : running-config
+Address or name of remost [}? [Ip du serveur TFTP] 192.168.110.6
+Destination filename [ce_2-config]? [nom du fichier] 
+
+Restaurer complétement la configuration : 
+Address or name of remote host []? 192.168.110.6
+Source filename []? config-router-11_05
+Destination filename [startup-config]? [appuie sur Entrée]
+Et relan,cer le router avec reload
+
+
+
