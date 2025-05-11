@@ -37,8 +37,10 @@ ip address 192.168.200.254 255.255.255.0
 no shutdown
 Exit
 
+
 Sur promox il vous faudra donc créer le vlan 100 pour le vmbr6 et le nommer administrations
 Et ensuite il vous faudra raccorder ce vlan a une machine
+Nous pouvons maintenant grace a putty acceder a notre router et switch
 
 
 
