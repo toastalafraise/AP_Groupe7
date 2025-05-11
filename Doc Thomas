@@ -1,0 +1,71 @@
+Connecter son switch
+
+Se mettre en port console avec un cable telnet 
+Sur putty aller dans serial et se connecter au switch
+
+Configuration du switch :
+
+Une fois le switch démarré il faut créer le vlan d'administrations
+
+Enable
+Configure terminal
+Vlan 100
+Name administrations
+
+maintenant il faudra attribuer une ip a ce vlan pour y avoir accès
+
+Interface vlan 100
+ip address 192.168.200.1 255.255.255.0
+no shutdown
+
+Il faut maintenant mettre un lien trunk enttre le switch et le proxmox et un entre le switch et le router, vous devez donc :
+
+Switch vers router 
+Interface FastEthernet 0/24
+Switchport mode trunk
+
+Switch vers promox 
+Interface FastEthetnet 0/2
+Switchport mode trunk 
+
+Configuration du router :
+
+Configure terminale
+Interface GigabitEthernet 0/0.100
+encapsulation dot1Q 100
+ip address 192.168.200.254 255.255.255.0
+no shutdown
+Exit
+
+Sur promox il vous faudra donc créer le vlan 100 pour le vmbr6 et le nommer administrations
+Et ensuite il vous faudra raccorder ce vlan a une machine
+
+
+
+Créer un VLAN pour le VLAN Thomas (300)
+
+Sur le switch :
+Enable
+Configurte terminale
+VLAN 300
+Name thomas
+
+
+Sur le router 
+Configure terminale 
+Interface gigabitEthernet 0/0.300
+encapsulation dot1Q 300
+ip address 192.168.230.254 255.255.255.0
+No shutdown
+Exit
+
+Pour le dhcp du VLAN 300
+Ip dhcp pool VLAN 300
+network 192.168.230.0 255.255.255.0
+default-router 192.168.230.254
+dns-server 192.168.110.20
+
+Sur le proxmox 
+
+Créer le vlan 300 et le raccorder a une machine virutel 
+
